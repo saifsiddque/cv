@@ -4,7 +4,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const app = express();
 const port = process.env.PORT || 5000 ;
 
-//middle ware 
+//middle ware  
 app.use(cors())
 app.use(express.json())
 
