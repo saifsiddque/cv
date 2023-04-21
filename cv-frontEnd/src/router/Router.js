@@ -3,6 +3,7 @@ import Form from "../components/Form";
 import Home from "../components/Home";
 import Main from "../components/Main";
 import Cv from "../components/Cv";
+import UpdateCv from "./UpdateCv";
  
 
 export const router = createBrowserRouter([
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
             path: '/',
             element: <Home></Home>,
             loader:({params}) =>{
-                return fetch('http://localhost:5000/cvInfos/01303394859')
+                return fetch('https://cv-back-end-saifsiddque.vercel.app/cvInfos/01303394859')
             }
         },
         {
@@ -22,10 +23,17 @@ export const router = createBrowserRouter([
             element: <Form></Form>
         },
         {
+            path: '/updateCv',
+            element: <UpdateCv></UpdateCv>,
+            // loader:({params}) =>{
+            //     return fetch(`https://cv-back-end-saifsiddque.vercel.app/cvInfos/${params.id}`)
+            // }
+        },
+        {
             path: '/cvInfos/:number',
             element: <Cv></Cv>,
             loader:({params}) =>{
-                return fetch(`http://localhost:5000/cvInfos/${params.number}`)
+                return fetch(`https://cv-back-end-saifsiddque.vercel.app/cvInfos/${params.number}`)
             }
         }
 

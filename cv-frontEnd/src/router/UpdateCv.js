@@ -1,33 +1,34 @@
 import React, { useState } from 'react';
 
-const Form = () => {
+const UpdateCv = () => {
     const [cv, setCv] = useState([])
+
     
     const handleInputBlur = (event) =>{
-        const field = event.target.name;
-        const value = event.target.value;
-        const newService = {...cv};
-        newService[field] = value;
-        setCv(newService) 
+        // const field = event.target.name;
+        // const value = event.target.value;
+        // const newService = {...cv};
+        // newService[field] = value;
+        // setCv(newService) 
     }
     const handleAddUser = (event) =>{
-        event.preventDefault();
-        console.log(cv);
-        fetch('https://cv-back-end-saifsiddque.vercel.app/cvInfos', {
-            method: 'POST', 
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(cv)
-        } )
-        .then(res => res.json())
-        .then(data => {
-            if(data.acknowledged){
-                alert('Product Added Successfully ')
-                event.target.reset()
+        // event.preventDefault();
+        // console.log(cv);
+        // fetch(`http://localhost:5000/cvInfos${storedReview._id}`, {
+        //     method: 'PUT', 
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(cv)
+        // } )
+        // .then(res => res.json())
+        // .then(data => {
+        //     if(data.acknowledged){
+        //         alert('Product Added Successfully ')
+        //         event.target.reset()
 
-            }
-        })
+        //     }
+        // })
     }
     return (
         <div>
@@ -114,4 +115,4 @@ const Form = () => {
     ); 
 };
 
-export default Form;
+export default UpdateCv;

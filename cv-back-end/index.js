@@ -26,27 +26,7 @@ async function run() {
       const bookingsCollection = client.db('assignment-12').collection('bookingsCollection')
       const usersCollection = client.db('assignment-12').collection('users')
       const cvCollection = client.db('cvMaker').collection('cvInfos')
-     
-
-      
-     
-
-
-
-
-      
-    //   app.put('/products/:id' , async(req, res)=>{
-    //     const id = req.params.id;
-    //     const filter = {_id: ObjectId(id)};
-    //     const options = {upsert: true}
-    //     const updatedStatus = {
-    //       $set: {
-    //         status: 'advertise'
-    //       }
-    //     }
-    //     const result = await productsCollection.updateOne(filter, updatedStatus, options);
-    //     res.send(result);
-    //   })
+  
       app.post('/cvInfos', async(req, res)=>{
         const cvInfos = req.body
         const result = await cvCollection.insertOne(cvInfos)
@@ -61,38 +41,9 @@ async function run() {
         res.send(information);
 
       })
+    
       
-    //   app.delete('/products/:id', async(req, res)=>{
-    //     const id = req.params.id;
-    //     const query = {_id: ObjectId(id)};
-    //     const result = await productsCollection.deleteOne(query)
-    //     console.log(result);
-    //     res.send(result)
-    //   })
-
-    //   app.get('/products', async(req, res)=>{
-    //     console.log(req.query);
-    //     let query = {};
-    //     if(req.query.category){
-    //       query = {
-    //         category : req.query.category
-    //       }
-    //     }
-    //     if(req.query.email){
-    //       query = {
-    //         email : req.query.email
-    //       }
-    //     }
-    //     if(req.query.status){
-    //       query = {
-    //         status : req.query.status
-    //       }
-    //     }
-    //     const cursor = productsCollection.find(query);
-    //     const product = await cursor.toArray();
-    //     res.send(product);
-    //   });
-
+    
 
       
       

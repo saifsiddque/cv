@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Home = () => {
     const cv = useLoaderData()
@@ -153,7 +153,8 @@ const Home = () => {
             </tbody>
         </table>
         <div className='px-24 p-5'>
-            <button className='btn m-auto w-full '>Update CV</button>
+        <Link to={'/updateCv'}><button className='btn m-auto w-full '>Update CV</button></Link>
+
         </div>
         </div>
 );
